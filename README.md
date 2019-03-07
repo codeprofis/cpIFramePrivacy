@@ -1,2 +1,2 @@
-# cpGMapsPrivacy
-DGSVO-compliant integration of a Google Maps IFrame with prior confirmation.
+# cpIFramePrivacy
+DGSVO-compliant integration of IFrames (Google Maps for example) with prior confirmation.
