@@ -36,6 +36,7 @@
       var v = document.cookie.match(
         "(^|;) ?" + "cpIFramePrivacy_" + name + "=([^;]*)(;|$)"
       );
+
       return v ? true : false;
     };
 
@@ -155,7 +156,7 @@
     return _cpIFramePrivacy;
   }
 
-  if (typeof window.cpIFramePrivacy === "undefined") {
+  if (window.cpIFramePrivacy === undefined) {
     window.cpIFramePrivacy = cpIFramePrivacy();
   }
 })(window, document); 
