@@ -10,7 +10,8 @@
     var _cpIFramePrivacy = {};
 
     _cpIFramePrivacy.config = {
-      cookiesEnabled: false
+      cookiesEnabled: false,
+      cookieDuration: 1,
     };
 
     /**
@@ -21,9 +22,20 @@
       _cpIFramePrivacy.config.cookiesEnabled = value;
     };
 
+    /**
+     * setCookieDuration
+     * Sets the expiry time of the duration to x days
+     */
+    _cpIFramePrivacy.setCookieDuration = function(value) {
+      if(value < 1) {
+        throw 'Do not set the Cookie-Duration to a value lower than 1. If you want to disable the cookie, please use setCookieEnabled(false)';
+      }
+      _cpIFramePrivacy.config.cookieDuration = value;
+    };
+
     _cpIFramePrivacy.setCookie = function(name) {
       var d = new Date();
-      d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * 1);
+      d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * this.config.cookieDuration);
       document.cookie =
         "cpIFramePrivacy_" + name + "=1;expires=" + d.toGMTString() + ";path=/";
     };
