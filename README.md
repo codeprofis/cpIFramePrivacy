@@ -9,7 +9,7 @@ It is easy to integrate cpIFramePrivacy.
 
 2. A div container - identified by a unique ID (in the examples we use *mapContainer* as the ID) - is created at the previous location of the iframe. The styles of the previous frame are assigned to this container. The attribute ```data-url``` is used to specify the iframes URL. The attribute ```data-confirmation-message``` specifies the ID of the container created in the next step.
 
-3. Next, a div container containing the confirmation message has to be defined (we define it as a direct sibling of ```mapContainer``` in our examples. This div can be designed freely.
+3. Next, a div container containing the confirmation message has to be defined (we define it as a direct sibling of ```mapContainer``` in our examples). This div can be designed freely.
 The HTML element, which is actually clicked by the user for confirmation, must contain the class ```cpIframePrivacy__confirm-button```.
 
 4. At the end of the body area the iframes are initialized using the following script:
@@ -20,6 +20,8 @@ The HTML element, which is actually clicked by the user for confirmation, must c
 ```
 
 Simply have a look at the example in ```example/Example.html```
+
+You can easily use it for multiple iframe instances within the same page.
 
 ## Enable cookie
 cpIFramePrivacy can store user's confirmation in a cookie, which leads to not showing the confirmation message again for a specified time (1 day by default)
